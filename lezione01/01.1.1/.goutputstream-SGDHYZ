@@ -1,0 +1,49 @@
+#ifndef _Vettore_h_
+#define _Vettore_h_
+#include <string>
+#include <vector>
+class Vettore {
+
+	protected :
+			vector<double>;
+
+
+	public :
+
+			Vettore() ;
+			~Vettore();
+			void SetComponent (unsigned int , double ) ;
+			double GetComponent (unsigned int) const;
+			double Media();
+			double Varianza();
+			double DeviazioneStandard();
+			double Somma(int N);
+
+
+};
+
+
+
+class VettoreDati: public Vettore {
+
+	protected:
+	std::string m_nomefile;
+	void Scambia(unsigned int i, unsigned int j);
+	void Sort(unsigned int primo, unsigned int ultimo);
+	
+	public:
+	VettoreDati(std::string file, unsigned int numero );
+	//void SetFile (std::string file) const;
+	void Print();	
+	void Print(std::string file) ;
+	void SelectionSort();
+	double Mediana();
+	void QuickSort();
+
+};
+
+	
+
+#endif
+
+
